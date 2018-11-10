@@ -18,9 +18,9 @@ class CodeChallenge extends Component {
 
   render() {
 
-    const people = this.state.people.map((person) => {
+    const people = this.state.people.map((person, i) => {
       return (
-        <div>
+        <div key={i}>
           <ul>
           <li>
             <p>Name(first, last): {person.first_name} {person.last_name}</p>
@@ -34,7 +34,7 @@ class CodeChallenge extends Component {
     return (
       <div>
         <button onClick={() => this.fetchPeople()}>Fetch</button>
-        <p>{people}</p>
+        <div>{people}</div>
       </div>
     );
   }

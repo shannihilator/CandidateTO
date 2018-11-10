@@ -5,7 +5,8 @@ class CodeChallengeLevelTwo extends Component {
   constructor(props){
     super(props);
     this.state = {
-      email: []
+      email: [],
+      letters: []
     }
   }
 
@@ -26,19 +27,24 @@ class CodeChallengeLevelTwo extends Component {
   }
   
   countCharacters(){
-        const letters = this.state.email.join("").split('')
-        const letterCount = letters.reduce((total, letter) => {
+        const letters = [...this.state.email]
+        const lettersCombined = letters.join("").split('')
+        const letterCount = lettersCombined.reduce((total, letter) => {
           total[letter] ? total[letter]++ : total[letter] = 1;
-          return total
+          return total 
         }, {})
         console.log(letterCount)
       }
   
+  newFunction(){
+    const res = this.countCharacters()
+    this.setState({letters: res})
+  }
 
   render() {
     return (
       <div>
-        <button onClick={() => this.countCharacters()}>Characters</button>
+        <button onClick={() => this.newFunction()}>Characters</button>
       </div>
     );
   }
