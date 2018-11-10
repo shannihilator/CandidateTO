@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
+import CodeChallenge from './CodeChallenge';
 
 const FlexBox = styled.div`
   display: flex;
@@ -37,8 +39,9 @@ const Logo = () => (
 const Instructions = () => (
   <InstructionsBox>
     <h3 style={{textAlign: 'center'}}>
-      Thank you for your interest in joining the SalesLoft Engineering team!
+      Level One
     </h3>
+    <CodeChallenge/>
     <p>
       This app is built with a Rails backend and a React frontend,
       use whatever you'd like out of this repo,
@@ -53,6 +56,7 @@ const Instructions = () => (
     </h3>
   </InstructionsBox>
 )
+
 
 export const Intro = () => (
   <Box>
