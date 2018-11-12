@@ -31,20 +31,15 @@ class CodeChallengeLevelTwo extends Component {
         const lettersCombined = letters.join("").split('')
         const letterCount = lettersCombined.reduce((total, letter) => {
           total[letter] ? total[letter]++ : total[letter] = 1;
-          return total 
-        }, {})
+          return total
+        }, [])
         console.log(letterCount)
       }
-  
-  newFunction(){
-    const res = this.countCharacters()
-    this.setState({letters: res})
-  }
 
   render() {
     return (
       <div>
-        <button onClick={() => this.newFunction()}>Characters</button>
+        <button onClick={() => this.countCharacters()}>Characters</button>
       </div>
     );
   }
