@@ -6,7 +6,7 @@ class CodeChallengeLevelTwo extends Component {
     super(props);
     this.state = {
       email: [],
-      letters: []
+      letters: {}
     }
   }
 
@@ -32,8 +32,9 @@ class CodeChallengeLevelTwo extends Component {
         const letterCount = lettersCombined.reduce((total, letter) => {
           total[letter] ? total[letter]++ : total[letter] = 1;
           return total
-        }, [])
+        }, {})
         console.log(letterCount)
+        this.setState({letters: letterCount})
       }
 
   render() {
