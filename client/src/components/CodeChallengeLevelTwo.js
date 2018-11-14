@@ -37,10 +37,28 @@ class CodeChallengeLevelTwo extends Component {
         this.setState({letters: letterCount})
       }
 
+
   render() {
+
+    const letters = this.state.letters
+    const letterArr = Object.keys(letters).map(function(key) {
+      return [String(key.toUpperCase() + ': '), letters[key]];
+    });
+    console.log(letterArr)
+
+    const lettersDisplayed = letterArr.map((letter) => {
+      return (
+        <ul>
+            <li>{letter}</li>
+        </ul>
+      )
+    })
+
+
     return (
       <div>
         <button onClick={() => this.countCharacters()}>Characters</button>
+        {lettersDisplayed}
       </div>
     );
   }
